@@ -1,12 +1,12 @@
 package robot.fsociety.flappybirdkotlin;
 
-public class BackrgounImage {
+public class BackgrounImage {
 
     private int backgroundImageX;
     private int backgroundImageY;
     private int backgroundImageVelocity;
     //Constructor
-    public BackrgounImage(){
+    public BackgrounImage(){
         backgroundImageX = 0;
         backgroundImageY = 0;
         backgroundImageVelocity= 3;
