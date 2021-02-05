@@ -13,9 +13,12 @@ public class AppConstants {
     }
 
     //define GetMap Store
-    public static bitMapStore getBitMapStore(){
+    public static bitMapStore getBitmapStore(){
         return BitMapStore;
     }
-
+    //define GetGameEngine
+    public static GameEngine  getGameEngine(){
+        return gameEngine;
+    }
 
 }

@@ -37,4 +37,15 @@ public class GameThread extends Thread {
             }
         }
     }
+    //return wether the thread is running
+    public boolean isRunning(){
+        return isRunning;
+    }
+
+    //
+    public void setIsRunning(boolean state){
+        isRunning = state;
+    }
+
+
 }
