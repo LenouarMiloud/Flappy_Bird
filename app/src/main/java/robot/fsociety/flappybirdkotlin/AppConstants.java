@@ -6,6 +6,7 @@ public class AppConstants {
 
     static bitMapStore BitMapStore;
     static GameEngine gameEngine;
+    static int SCREEN_WIDTH,SCREEN_HEIGHT
 
     public static void initialization(Context context){
         BitMapStore = new bitMapStore(context.getResources());
