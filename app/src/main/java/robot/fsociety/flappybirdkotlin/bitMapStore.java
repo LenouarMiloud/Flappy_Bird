@@ -9,6 +9,7 @@ public class bitMapStore {
 
     public bitMapStore(Resources resources) {
         background = BitmapFactory.decodeResource(resources,R.drawable.background);
+        background = scaleImage(background);
     }
 
     //get the background
@@ -25,5 +26,18 @@ public class bitMapStore {
     int getBackgroundHeight(){
         return background.getHeight();
     }
+
+    public Bitmap scaleImage(Bitmap bitmap){
+        float withHeightRatio = getBackgroundWidth() / getBackgroundHeight();
+
+        //Get the scale width of the bitMap
+        int backgroundScaleWidth = (int) (withHeightRatio * AppConstants.SCREEN_HEIGHT);
+
+        return Bitmap.createScaledBitmap(backgroundScaleWidth,AppConstants.SCREEN_WIDTH,AppConstants.SCREEN_HEIGHT,false);
+
+
+    }
+
+
 
 }
