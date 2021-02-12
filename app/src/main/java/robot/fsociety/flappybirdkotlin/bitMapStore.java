@@ -33,7 +33,7 @@ public class bitMapStore {
         //Get the scale width of the bitMap
         int backgroundScaleWidth = (int) (withHeightRatio * AppConstants.SCREEN_HEIGHT);
 
-        return Bitmap.createScaledBitmap(backgroundScaleWidth,AppConstants.SCREEN_WIDTH,AppConstants.SCREEN_HEIGHT,false);
+        return Bitmap.createScaledBitmap(bitmap,backgroundScaleWidth,AppConstants.SCREEN_HEIGHT,false);
 
 
     }
