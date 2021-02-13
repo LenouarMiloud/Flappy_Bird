@@ -14,6 +14,28 @@ public class bitMapStore {
         background = scaleImage(background);
         birds = new Bitmap[4];
         birds[0] = BitmapFactory.decodeResource(resources,R.drawable.bird_frame1);
+        birds[1] = BitmapFactory.decodeResource(resources,R.drawable.bird_frame2);
+        birds[2] = BitmapFactory.decodeResource(resources,R.drawable.bird_frame3);
+        birds[3] = BitmapFactory.decodeResource(resources,R.drawable.bird_frame4);
+        birds[4] = BitmapFactory.decodeResource(resources,R.drawable.bird_frame5);
+        birds[5] = BitmapFactory.decodeResource(resources,R.drawable.bird_frame6);
+        birds[6] = BitmapFactory.decodeResource(resources,R.drawable.bird_frame7);
+        birds[7] = BitmapFactory.decodeResource(resources,R.drawable.bird_frame8);
+    }
+
+    //get the bird Bitmap
+    public Bitmap getBird(int frame){
+        return birds[frame];
+    }
+
+    // get the Bird width
+    public int getBirdWidth(){
+        return birds[0].getWidth();
+    }
+
+    // get the Bird height
+    public int getBirdHeight(){
+        return birds[0].getHeight();
     }
 
     //get the background

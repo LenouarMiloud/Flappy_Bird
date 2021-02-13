@@ -5,9 +5,11 @@ import android.graphics.Canvas;
 public class GameEngine {
 
     BackgrounImage backgrounImage;
+    Bird bird;
 
     public GameEngine() {
         backgrounImage = new BackgrounImage();
+        bird = new Bird();
     }
 
     public void updateAndDrawBackgroundImage(Canvas canvas){
@@ -23,4 +25,7 @@ public class GameEngine {
         }
 
     }
+
+    
+
 }
