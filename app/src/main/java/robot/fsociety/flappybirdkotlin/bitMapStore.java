@@ -6,10 +6,14 @@ import android.graphics.BitmapFactory;
 
 public class bitMapStore {
     Bitmap background;
+    Bitmap[] birds;
+
 
     public bitMapStore(Resources resources) {
         background = BitmapFactory.decodeResource(resources,R.drawable.background);
         background = scaleImage(background);
+        birds = new Bitmap[4];
+        birds[0] = BitmapFactory.decodeResource(resources,R.drawable.bird_frame1);
     }
 
     //get the background
