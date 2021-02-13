@@ -26,6 +26,14 @@ public class GameEngine {
 
     }
 
-    
+    public void updateAndDrawBird(Canvas canvas){
+        int currentFrame = bird.getCurrentFrame();
+        canvas.drawBitmap(AppConstants.getBitmapStore().getBird(currentFrame),bird.getBirdX(),bird.getBirdY(),null);
+        currentFrame++;
+        if(currentFrame > Bird.maxFrame){
+            currentFrame =0;
+        }
+        bird.setCurrentFrame(currentFrame);
+    }
 
 }
