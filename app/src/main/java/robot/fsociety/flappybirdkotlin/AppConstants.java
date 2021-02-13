@@ -10,11 +10,15 @@ public class AppConstants {
     static bitMapStore BitMapStore;
     static GameEngine gameEngine;
     static int SCREEN_WIDTH,SCREEN_HEIGHT;
+    static int gravity;
+    static int velocity_when_jump;
 
     public static void initialization(Context context){
         setScreenSize(context);
         BitMapStore = new bitMapStore(context.getResources());
         gameEngine = new GameEngine();
+        AppConstants.gravity = 3;
+        AppConstants.velocity_when_jump = -40;
     }
 
     //define GetMap Store

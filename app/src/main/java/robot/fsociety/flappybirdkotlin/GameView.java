@@ -1,6 +1,7 @@
 package robot.fsociety.flappybirdkotlin;
 
 import android.content.Context;
+import android.view.MotionEvent;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 
@@ -51,5 +52,16 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
         holder.addCallback(this);
         setFocusable(true);
         gameThread = new GameThread(holder);
+    }
+
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+        int action = event.getAction();
+        //detect the tap
+        if (action == MotionEvent.ACTION_DOWN){
+            AppConstants.getGameEngine().gameState = 1;
+            AppConstants.getGameEngine().bird.setVelocity(AppConstants.velocity_when_jump);
+        }
+        return true;
     }
 }

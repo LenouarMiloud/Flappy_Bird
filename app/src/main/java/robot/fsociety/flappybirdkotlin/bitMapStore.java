@@ -17,10 +17,6 @@ public class bitMapStore {
         birds[1] = BitmapFactory.decodeResource(resources,R.drawable.bird_frame2);
         birds[2] = BitmapFactory.decodeResource(resources,R.drawable.bird_frame3);
         birds[3] = BitmapFactory.decodeResource(resources,R.drawable.bird_frame4);
-        birds[4] = BitmapFactory.decodeResource(resources,R.drawable.bird_frame5);
-        birds[5] = BitmapFactory.decodeResource(resources,R.drawable.bird_frame6);
-        birds[6] = BitmapFactory.decodeResource(resources,R.drawable.bird_frame7);
-        birds[7] = BitmapFactory.decodeResource(resources,R.drawable.bird_frame8);
     }
 
     //get the bird Bitmap

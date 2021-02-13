@@ -6,10 +6,12 @@ public class GameEngine {
 
     BackgrounImage backgrounImage;
     Bird bird;
+    static int gameState;
 
     public GameEngine() {
         backgrounImage = new BackgrounImage();
         bird = new Bird();
+        gameState = 0;
     }
 
     public void updateAndDrawBackgroundImage(Canvas canvas){
@@ -27,6 +29,14 @@ public class GameEngine {
     }
 
     public void updateAndDrawBird(Canvas canvas){
+
+        if(gameState == 1){
+            if(bird.getBirdY() < AppConstants.SCREEN_HEIGHT - AppConstants.getBitmapStore().getBirdHeight() || bird.getVelocity() < 0){
+                bird.setVelocity(bird.getVelocity() + AppConstants.gravity);
+                bird.setBirdY(bird.getBirdY() + bird.getVelocity());
+            }
+        }
+
         int currentFrame = bird.getCurrentFrame();
         canvas.drawBitmap(AppConstants.getBitmapStore().getBird(currentFrame),bird.getBirdX(),bird.getBirdY(),null);
         currentFrame++;
