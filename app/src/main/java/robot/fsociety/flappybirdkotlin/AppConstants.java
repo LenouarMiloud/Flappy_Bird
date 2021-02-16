@@ -12,6 +12,7 @@ public class AppConstants {
     static int SCREEN_WIDTH,SCREEN_HEIGHT;
     static int gravity;
     static int velocity_when_jump;
+    static int gapTopBottom;
 
     public static void initialization(Context context){
         setScreenSize(context);
@@ -19,6 +20,7 @@ public class AppConstants {
         gameEngine = new GameEngine();
         AppConstants.gravity = 3;
         AppConstants.velocity_when_jump = -40;
+        gapTopBottom = 600;
     }
 
     //define GetMap Store

@@ -7,6 +7,7 @@ import android.graphics.BitmapFactory;
 public class bitMapStore {
     Bitmap background;
     Bitmap[] birds;
+    Bitmap tubeTop,tubeBottom;
 
 
     public bitMapStore(Resources resources) {
@@ -17,6 +18,8 @@ public class bitMapStore {
         birds[1] = BitmapFactory.decodeResource(resources,R.drawable.bird_frame2);
         birds[2] = BitmapFactory.decodeResource(resources,R.drawable.bird_frame3);
         birds[3] = BitmapFactory.decodeResource(resources,R.drawable.bird_frame4);
+        tubeTop = BitmapFactory.decodeResource(resources,R.drawable.red_tube_top);
+        tubeBottom = BitmapFactory.decodeResource(resources,R.drawable.red_tube_bottom);
     }
 
     //get the bird Bitmap
@@ -47,6 +50,22 @@ public class bitMapStore {
     //get the background height
     int getBackgroundHeight(){
         return background.getHeight();
+    }
+
+    public Bitmap getTubeTop() {
+        return tubeTop;
+    }
+
+    public Bitmap getTubeBottom() {
+        return tubeBottom;
+    }
+
+    public int getTubeWidth(){
+        return tubeTop.getWidth();
+    }
+
+    public int getTubeHeight(){
+        return tubeTop.getHeight();
     }
 
     public Bitmap scaleImage(Bitmap bitmap){

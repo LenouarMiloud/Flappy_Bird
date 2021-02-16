@@ -2,16 +2,20 @@ package robot.fsociety.flappybirdkotlin;
 
 import android.graphics.Canvas;
 
+import java.util.ArrayList;
+
 public class GameEngine {
 
     BackgrounImage backgrounImage;
     Bird bird;
     static int gameState;
+    ArrayList<MyTube> tubes;
 
     public GameEngine() {
         backgrounImage = new BackgrounImage();
         bird = new Bird();
         gameState = 0;
+        tubes = new ArrayList<>();
     }
 
     public void updateAndDrawBackgroundImage(Canvas canvas){
