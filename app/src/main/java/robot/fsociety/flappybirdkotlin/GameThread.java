@@ -25,6 +25,7 @@ public class GameThread extends Thread {
                 synchronized (surfaceHolder){
                     AppConstants.getGameEngine().updateAndDrawBackgroundImage(canvas);
                     AppConstants.getGameEngine().updateAndDrawBird(canvas);
+                    AppConstants.getGameEngine().updateAndDrawTubes(canvas);
                     surfaceHolder.unlockCanvasAndPost(canvas);
                 }
             }

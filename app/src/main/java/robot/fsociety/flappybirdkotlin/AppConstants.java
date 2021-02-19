@@ -13,14 +13,19 @@ public class AppConstants {
     static int gravity;
     static int velocity_when_jump;
     static int gapTopBottom;
+    static int numberTubes;
+    static int tubeVelosity;
+    static int minTubeOffSetY;
+    static int maxTubeOffSetY;
+    static int distanceTubes;
 
     public static void initialization(Context context){
         setScreenSize(context);
         BitMapStore = new bitMapStore(context.getResources());
         gameEngine = new GameEngine();
         AppConstants.gravity = 3;
-        AppConstants.velocity_when_jump = -40;
-        gapTopBottom = 600;
+        setGameConstants();
+
     }
 
     //define GetMap Store
@@ -41,6 +46,15 @@ public class AppConstants {
         int height = displayMetrics.heightPixels;
         AppConstants.SCREEN_WIDTH = width;
         AppConstants.SCREEN_HEIGHT = height;
+    }
+    public static void setGameConstants(){
+        AppConstants.velocity_when_jump = -40;
+        gapTopBottom = 600;
+        AppConstants.numberTubes = 2;
+        AppConstants.tubeVelosity = 12;
+        AppConstants.minTubeOffSetY = (int) (AppConstants.gapTopBottom / 2.0);
+        AppConstants.maxTubeOffSetY = AppConstants.SCREEN_HEIGHT - AppConstants.minTubeOffSetY - AppConstants.gapTopBottom;
+        AppConstants.distanceTubes = AppConstants.SCREEN_WIDTH * 3 / 4;
     }
 
 }
