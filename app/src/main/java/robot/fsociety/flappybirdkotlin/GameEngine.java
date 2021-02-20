@@ -30,14 +30,14 @@ public class GameEngine {
     public void updateAndDrawTubes(Canvas canvas){
         if (gameState == 1){
             for(int i=0;i<AppConstants.numberTubes;i++){
-                if(tubes.get(i).getTubeX() < - AppConstants.getBitmapStore().getTubeWidth()){
+                if(tubes.get(i).getTubeX() < -AppConstants.getBitmapStore().getTubeWidth()){
                     tubes.get(i).setTubeX(tubes.get(i).getTubeX() + AppConstants.numberTubes * AppConstants.distanceTubes);
                     int topTubeOffSetY = AppConstants.minTubeOffSetY + random.nextInt(AppConstants.maxTubeOffSetY - AppConstants.minTubeOffSetY + 1 );
                     tubes.get(i).setTopTubOffSetY(topTubeOffSetY);
-                    tubes.get(i).setTubeX(tubes.get(i).getTubeX() - AppConstants.tubeVelosity);
-                    canvas.drawBitmap(AppConstants.getBitmapStore().getTubeTop(),tubes.get(i).getTubeX(),tubes.get(i).getTubeTopY(),null);
-                    canvas.drawBitmap(AppConstants.getBitmapStore().getTubeBottom(),tubes.get(i).getTubeX(),tubes.get(i).getTubeBottomY(),null);
                 }
+                tubes.get(i).setTubeX(tubes.get(i).getTubeX() - AppConstants.tubeVelosity);
+                canvas.drawBitmap(AppConstants.getBitmapStore().getTubeTop(),tubes.get(i).getTubeX(),tubes.get(i).getTubeTopY(),null);
+                canvas.drawBitmap(AppConstants.getBitmapStore().getTubeBottom(),tubes.get(i).getTubeX(),tubes.get(i).getTubeBottomY(),null);
             }
         }
     }
