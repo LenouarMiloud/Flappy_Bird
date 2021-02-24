@@ -22,9 +22,8 @@ public class AppConstants {
     public static void initialization(Context context){
         setScreenSize(context);
         BitMapStore = new bitMapStore(context.getResources());
-        gameEngine = new GameEngine();
-        AppConstants.gravity = 3;
         setGameConstants();
+        gameEngine = new GameEngine();
 
     }
 
@@ -48,6 +47,7 @@ public class AppConstants {
         AppConstants.SCREEN_HEIGHT = height;
     }
     public static void setGameConstants(){
+        AppConstants.gravity = 3;
         AppConstants.velocity_when_jump = -40;
         gapTopBottom = 600;
         AppConstants.numberTubes = 2;
