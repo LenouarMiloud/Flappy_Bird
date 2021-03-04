@@ -8,6 +8,7 @@ public class bitMapStore {
     Bitmap background;
     Bitmap[] birds;
     Bitmap tubeTop,tubeBottom;
+    Bitmap greenTubeTop,greenTubeBottom;
 
 
     public bitMapStore(Resources resources) {
@@ -20,6 +21,16 @@ public class bitMapStore {
         birds[3] = BitmapFactory.decodeResource(resources,R.drawable.bird_frame4);
         tubeTop = BitmapFactory.decodeResource(resources,R.drawable.red_tube_top);
         tubeBottom = BitmapFactory.decodeResource(resources,R.drawable.red_tube_bottom);
+        greenTubeTop = BitmapFactory.decodeResource(resources,R.drawable.tube_top);
+        greenTubeBottom = BitmapFactory.decodeResource(resources,R.drawable.tube_bottom);
+    }
+
+    public Bitmap getGreenTubeTop(){
+        return greenTubeTop;
+    }
+
+    public Bitmap getGreenTubeBottom(){
+        return greenTubeBottom;
     }
 
     //get the bird Bitmap

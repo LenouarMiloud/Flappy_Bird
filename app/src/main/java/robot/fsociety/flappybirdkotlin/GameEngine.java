@@ -34,10 +34,16 @@ public class GameEngine {
                     tubes.get(i).setTubeX(tubes.get(i).getTubeX() + AppConstants.numberTubes * AppConstants.distanceTubes);
                     int topTubeOffSetY = AppConstants.minTubeOffSetY + random.nextInt(AppConstants.maxTubeOffSetY - AppConstants.minTubeOffSetY + 1 );
                     tubes.get(i).setTopTubOffSetY(topTubeOffSetY);
+                    tubes.get(i).setTubeColor();
                 }
                 tubes.get(i).setTubeX(tubes.get(i).getTubeX() - AppConstants.tubeVelosity);
-                canvas.drawBitmap(AppConstants.getBitmapStore().getTubeTop(),tubes.get(i).getTubeX(),tubes.get(i).getTubeTopY(),null);
-                canvas.drawBitmap(AppConstants.getBitmapStore().getTubeBottom(),tubes.get(i).getTubeX(),tubes.get(i).getTubeBottomY(),null);
+                if(tubes.get(i).getTubeColor() == 0){
+                    canvas.drawBitmap(AppConstants.getBitmapStore().getTubeTop(),tubes.get(i).getTubeX(),tubes.get(i).getTubeTopY(),null);
+                    canvas.drawBitmap(AppConstants.getBitmapStore().getTubeBottom(),tubes.get(i).getTubeX(),tubes.get(i).getTubeBottomY(),null);
+                }else{
+                    canvas.drawBitmap(AppConstants.getBitmapStore().getGreenTubeTop(),tubes.get(i).getTubeX(),tubes.get(i).getTubeTopY(),null);
+                    canvas.drawBitmap(AppConstants.getBitmapStore().getGreenTubeBottom(),tubes.get(i).getTubeX(),tubes.get(i).getTubeBottomY(),null);
+                }
             }
         }
     }
