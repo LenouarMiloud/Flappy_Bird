@@ -12,6 +12,8 @@ public class GameEngine {
     static int gameState;
     ArrayList<MyTube> tubes;
     Random random;
+    int score; // for save the game score
+    int scoringTube;
 
     public GameEngine() {
         backgrounImage = new BackgrounImage();
@@ -25,10 +27,19 @@ public class GameEngine {
             MyTube tube = new MyTube(tubeX,topTubeOffsetY);
             tubes.add(tube);
         }
+        score = 0;
+        scoringTube = 0;
     }
 
     public void updateAndDrawTubes(Canvas canvas){
         if (gameState == 1){
+            if(tubes.get(scoringTube).getTubeX() < bird.getBirdX() - AppConstants.getBitmapStore().getTubeWidth()){
+                score++;
+                scoringTube++;
+                if(scoringTube > AppConstants.numberTubes - 1 ){
+                    scoringTube = 0;
+                }
+            }
             for(int i=0;i<AppConstants.numberTubes;i++){
                 if(tubes.get(i).getTubeX() < -AppConstants.getBitmapStore().getTubeWidth()){
                     tubes.get(i).setTubeX(tubes.get(i).getTubeX() + AppConstants.numberTubes * AppConstants.distanceTubes);
