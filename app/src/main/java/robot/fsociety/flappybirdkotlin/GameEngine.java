@@ -1,6 +1,8 @@
 package robot.fsociety.flappybirdkotlin;
 
 import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.Paint;
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -14,6 +16,7 @@ public class GameEngine {
     Random random;
     int score; // for save the game score
     int scoringTube;
+    Paint scorePaint;
 
     public GameEngine() {
         backgrounImage = new BackgrounImage();
@@ -29,6 +32,10 @@ public class GameEngine {
         }
         score = 0;
         scoringTube = 0;
+        scorePaint = new Paint();
+        scorePaint.setColor(Color.BLUE);
+        scorePaint.setTextSize(100);
+        scorePaint.setTextAlign(Paint.Align.LEFT);
     }
 
     public void updateAndDrawTubes(Canvas canvas){
@@ -56,6 +63,7 @@ public class GameEngine {
                     canvas.drawBitmap(AppConstants.getBitmapStore().getGreenTubeBottom(),tubes.get(i).getTubeX(),tubes.get(i).getTubeBottomY(),null);
                 }
             }
+            canvas.drawText("Point: "+score,0,110,scorePaint);
         }
     }
 
