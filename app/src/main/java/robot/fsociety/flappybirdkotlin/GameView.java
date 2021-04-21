@@ -59,6 +59,12 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
         int action = event.getAction();
         //detect the tap
         if (action == MotionEvent.ACTION_DOWN){
+            if(AppConstants.getGameEngine().gameState == 0){
+                AppConstants.getGameEngine().gameState = 1;
+                AppConstants.getSoundBank().playSwoosh();
+            }else{
+                AppConstants.getSoundBank().playWin();
+            }
             AppConstants.getGameEngine().gameState = 1;
             AppConstants.getGameEngine().bird.setVelocity(AppConstants.velocity_when_jump);
         }

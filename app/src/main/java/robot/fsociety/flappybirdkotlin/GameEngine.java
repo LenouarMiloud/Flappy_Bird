@@ -47,12 +47,14 @@ public class GameEngine {
                 //Game Over
                 gameState = 2;
                 Log.d("GAME", "Over");
+                AppConstants.getSoundBank().playHit();
             } else if (tubes.get(scoringTube).getTubeX() < bird.getBirdX() - AppConstants.getBitmapStore().getTubeWidth()) {
                 score++;
                 scoringTube++;
                 if (scoringTube > AppConstants.numberTubes - 1) {
                     scoringTube = 0;
                 }
+                AppConstants.getSoundBank().playPoint();
             }
             for (int i = 0; i < AppConstants.numberTubes; i++) {
                 if (tubes.get(i).getTubeX() < -AppConstants.getBitmapStore().getTubeWidth()) {
