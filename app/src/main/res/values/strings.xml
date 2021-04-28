@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">FlappyBirdKotlin</string>
+    <string name="restart_String">Restart</string>
+    <string name="exit_String">Exit</string>
+    <string name="score_String">Score:</string>
+    <string name="personal_best_String">Personal Best:</string>
 </resources>
