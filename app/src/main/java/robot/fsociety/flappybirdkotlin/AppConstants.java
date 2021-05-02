@@ -19,6 +19,7 @@ public class AppConstants {
     static int maxTubeOffSetY;
     static int distanceTubes;
     static soundBank soundBank;
+    static Context gameActivityContext;
 
     public static void initialization(Context context){
         setScreenSize(context);

@@ -1,5 +1,8 @@
 package robot.fsociety.flappybirdkotlin;
 
+import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
@@ -46,8 +49,14 @@ public class GameEngine {
                     + AppConstants.getBitmapStore().getBirdHeight()))) {
                 //Game Over
                 gameState = 2;
-                Log.d("GAME", "Over");
+                //Log.d("GAME", "Over");
                 AppConstants.getSoundBank().playHit();
+                Context context = AppConstants.gameActivityContext;
+                Intent intent = new Intent(context,gameOver.class);
+                intent.putExtra("Score",score);
+                context.startActivity(intent);
+                ((Activity) context).finish();
+
             } else if (tubes.get(scoringTube).getTubeX() < bird.getBirdX() - AppConstants.getBitmapStore().getTubeWidth()) {
                 score++;
                 scoringTube++;
